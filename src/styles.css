@@ -1,0 +1,201 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Navaratna Jewellers — luxury jewellery design system.
+ * Cream background, warm gold accents, elegant serif display type.
+ * All colors use oklch and are exposed as semantic tokens.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-olive: var(--olive);
+  --color-olive-foreground: var(--olive-foreground);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", "Helvetica Neue", sans-serif;
+  --tracking-luxe: 0.18em;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  --background: oklch(0.985 0.006 85);
+  --foreground: oklch(0.32 0.018 60);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.32 0.018 60);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.32 0.018 60);
+
+  --primary: oklch(0.55 0.08 70);
+  --primary-foreground: oklch(0.99 0.005 85);
+
+  --secondary: oklch(0.95 0.012 80);
+  --secondary-foreground: oklch(0.36 0.02 60);
+
+  --muted: oklch(0.95 0.01 80);
+  --muted-foreground: oklch(0.55 0.02 65);
+
+  --accent: oklch(0.93 0.02 80);
+  --accent-foreground: oklch(0.36 0.02 60);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.99 0.005 85);
+
+  --border: oklch(0.9 0.012 80);
+  --input: oklch(0.9 0.012 80);
+  --ring: oklch(0.62 0.09 75);
+
+  /* Brand tokens */
+  --gold: oklch(0.66 0.1 78);
+  --gold-soft: oklch(0.82 0.07 82);
+  --olive: oklch(0.46 0.055 95);
+  --olive-foreground: oklch(0.97 0.01 90);
+
+  --gradient-gold: linear-gradient(135deg, oklch(0.74 0.09 80), oklch(0.6 0.1 70));
+  --shadow-card: 0 14px 40px -22px oklch(0.4 0.05 70 / 0.45);
+  --shadow-soft: 0 8px 30px -18px oklch(0.4 0.05 70 / 0.3);
+
+  --chart-1: oklch(0.66 0.1 78);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0.006 85);
+  --sidebar-foreground: oklch(0.32 0.018 60);
+  --sidebar-primary: oklch(0.55 0.08 70);
+  --sidebar-primary-foreground: oklch(0.99 0.005 85);
+  --sidebar-accent: oklch(0.93 0.02 80);
+  --sidebar-accent-foreground: oklch(0.36 0.02 60);
+  --sidebar-border: oklch(0.9 0.012 80);
+  --sidebar-ring: oklch(0.62 0.09 75);
+}
+
+.dark {
+  --background: oklch(0.2 0.012 70);
+  --foreground: oklch(0.95 0.008 85);
+  --card: oklch(0.24 0.014 70);
+  --card-foreground: oklch(0.95 0.008 85);
+  --popover: oklch(0.24 0.014 70);
+  --popover-foreground: oklch(0.95 0.008 85);
+  --primary: oklch(0.74 0.09 80);
+  --primary-foreground: oklch(0.2 0.012 70);
+  --secondary: oklch(0.3 0.016 70);
+  --secondary-foreground: oklch(0.95 0.008 85);
+  --muted: oklch(0.3 0.016 70);
+  --muted-foreground: oklch(0.72 0.02 75);
+  --accent: oklch(0.32 0.02 75);
+  --accent-foreground: oklch(0.95 0.008 85);
+  --destructive: oklch(0.62 0.2 25);
+  --destructive-foreground: oklch(0.95 0.008 85);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.74 0.09 80);
+  --gold: oklch(0.78 0.09 82);
+  --gold-soft: oklch(0.6 0.08 80);
+  --olive: oklch(0.4 0.05 95);
+  --olive-foreground: oklch(0.97 0.01 90);
+  --sidebar: oklch(0.2 0.012 70);
+  --sidebar-foreground: oklch(0.95 0.008 85);
+  --sidebar-primary: oklch(0.74 0.09 80);
+  --sidebar-primary-foreground: oklch(0.2 0.012 70);
+  --sidebar-accent: oklch(0.32 0.02 75);
+  --sidebar-accent-foreground: oklch(0.95 0.008 85);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.74 0.09 80);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .tracking-luxe {
+    letter-spacing: var(--tracking-luxe);
+  }
+  .text-gold {
+    color: var(--gold);
+  }
+  .bg-gold {
+    background-color: var(--gold);
+  }
+  .bg-gradient-gold {
+    background-image: var(--gradient-gold);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
